@@ -1,7 +1,8 @@
-Demo:
-https://codesandbox.io/s/github/RinatRezyapov/react-hooks-shared-state
+import React from "react";
+import ReactDOM from "react-dom";
 
-```
+import App from "./App";
+
 const createSharedState = defaultValue => {
   let listeners = [];
 
@@ -20,12 +21,7 @@ const createSharedState = defaultValue => {
     return [value, setSharedState];
   };
 };
-```
 
-Create and export shared state:
+export const useSharedState = createSharedState(0);
 
-```export const useSharedState = createSharedState(0);```
-
-Import as:
-
-```const [value, setValue] = useSharedState();```
+ReactDOM.render(<App />, document.getElementById("root"));
